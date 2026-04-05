@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Friska Admin Dashboard</title>
 
+<base target="_blank">
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -90,48 +92,10 @@ cursor:pointer;
 font-size:18px;
 }
 
-.lock-screen{
-position:fixed;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background:#0a1a6e;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-color:white;
-}
-
-.lock-screen input{
-padding:10px;
-border-radius:6px;
-border:none;
-margin-top:10px;
-}
-
-.lock-screen button{
-margin-top:10px;
-padding:10px 20px;
-border:none;
-border-radius:6px;
-background:white;
-color:#0a1a6e;
-font-weight:700;
-cursor:pointer;
-}
-
 </style>
 </head>
 
 <body>
-
-<div class="lock-screen" id="lock">
-<h2>Friska Admin Access</h2>
-<input type="password" id="pass" placeholder="Enter password">
-<button onclick="unlock()">Enter</button>
-</div>
 
 <header>
 <h1>Friska Dashboard</h1>
@@ -210,18 +174,6 @@ Cache Control
 </div>
 
 <script>
-
-const PASSWORD="friska";
-
-function unlock(){
-const p=document.getElementById("pass").value;
-if(p===PASSWORD){
-document.getElementById("lock").style.display="none";
-}
-else{
-alert("Wrong password");
-}
-}
 
 function toggleDark(){
 document.body.classList.toggle("dark");
